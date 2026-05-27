@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles Rústicos Leufü | Cocinas, Puertas, Comedores & Más en Madera Nativa</title>
+    <meta name="description" content="Muebles rústicos artesanales: cocinas, closets, modulares, comedores, puertas, mesas de centro, camas y quinchos. Hechos a mano en ciprés, roble y raulí. Curicó, Chile.">
+    <meta name="keywords" content="muebles rústicos, cocinas madera, puertas madera nativa, comedores artesanales, quinchos, closets, modulares, Curicó, Chile">
+    <meta property="og:title" content="Muebles Rústicos Leufü | Arte en Madera Nativa">
+    <meta property="og:description" content="Cocinas, puertas, comedores, closets y más. Muebles artesanales en madera nativa chilena.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS CUSTOM PROPERTIES ===== */
+        :root {
+            --brand-light: #FAEDCD;
+            --brand-cream: #EFE8D8;
+            --brand-primary: #D4A373;
+            --brand-secondary: #A98467;
+            --brand-dark: #3A2E2A;
+            --brand-darker: #1F1916;
+            --brand-accent: #6B705C;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --shadow-soft: 0 4px 24px rgba(58,46,42,0.08);
+            --shadow-elevated: 0 12px 40px rgba(58,46,42,0.15);
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--brand-light); }
+        ::-webkit-scrollbar-thumb { background: var(--brand-secondary); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
+
+        /* ===== UTILITIES ===== */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+        @media (min-width: 1024px) { .container { padding: 0 3rem; } }
+        .text-shadow-sm { text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .text-shadow-md { text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+        .section-padding { padding: 6rem 0; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 6px 24px rgba(37,211,102,0.7); }
+        }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-slide-up { animation: slideUp 0.8s ease-out forwards; opacity: 0; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered children */
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        .reveal-stagger.active > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(8) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+
+        /* ===== NAVIGATION ===== */
+        .glass-nav {
+            background: rgba(58, 46, 42, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        #navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            transition: var(--transition-smooth);
+            padding: 1.25rem 0;
+        }
+        #navbar.scrolled {
+            padding: 0.75rem 0;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+        .nav-logo span { color: var(--brand-primary); }
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) { .nav-links { display: flex; } }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--brand-primary); }
+        .nav-cta {
+            background: var(--brand-primary) !important;
+            color: #fff !important;
+            padding: 0.625rem 1.5rem;
+            border: 1px solid var(--brand-primary);
+            transition: var(--transition-smooth) !important;
+        }
+        .nav-cta:hover {
+            background: var(--brand-secondary) !important;
+            border-color: var(--brand-secondary) !important;
+        }
+        .mobile-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        @media (min-width: 768px) { .mobile-btn { display: none; } }
+
+        #mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 0;
+            gap: 1.5rem;
+        }
+        #mobile-menu.open {
+            display: flex;
+        }
+        #mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--brand-dark) 0%, rgba(58,46,42,0.4) 40%, rgba(58,46,42,0.3) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: #fff;
+            padding-top: 5rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            color: var(--brand-primary);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 em {
+            font-weight: 300;
+            font-style: italic;
+        }
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            font-weight: 300;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .hero-cta:hover {
+            background: #fff;
+            color: var(--brand-dark);
+        }
+        .hero-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .hero-stars i { color: #FBBF24; font-size: 0.7rem; }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+        }
+        .scroll-indicator a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        .scroll-indicator a:hover { color: #fff; }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        .section-label {
+            display: block;
+            color: var(--brand-primary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .section-title em { font-weight: 300; font-style: italic; color: var(--brand-secondary); }
+        .section-desc {
+            color: var(--brand-secondary);
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ===== CATEGORY GRID ===== */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .category-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        }
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            group: true;
+        }
+        @media (min-width: 768px) {
+            .category-card:nth-child(1),
+            .category-card:nth-child(2) { aspect-ratio: 4/3; grid-column: span 2; }
+        }
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        .category-card:hover img { transform: scale(1.06); }
+        .category-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.25rem;
+            transition: background 0.4s;
+        }
+        .category-card:hover .category-card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+        }
+        .category-card-label {
+            color: var(--brand-primary);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .category-card-title {
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        @media (min-width: 768px) {
+            .category-card-overlay { padding: 1.75rem; }
+            .category-card-title { font-size: 1.5rem; }
+        }
+
+        /* ===== SHOWCASE SECTIONS ===== */
+        .showcase {
+            position: relative;
+            overflow: hidden;
+        }
+        .showcase-dark { background: var(--brand-dark); color: #fff; }
+        .showcase-cream { background: var(--brand-cream); }
+        .showcase-light { background: var(--brand-light); }
+
+        .showcase-split {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        @media (min-width: 1024px) {
+            .showcase-split {
+                flex-direction: row;
+                align-items: center;
+                gap: 4rem;
+            }
+            .showcase-split.reverse { flex-direction: row-reverse; }
+        }
+        .showcase-media {
+            flex: 1;
+            position: relative;
+        }
+        .showcase-media img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: var(--shadow-elevated);
+        }
+        @media (min-width: 1024px) {
+            .showcase-media img { height: 520px; }
+        }
+        .showcase-media-accent {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            right: -1rem;
+            bottom: -1rem;
+            border: 1px solid var(--brand-primary);
+            opacity: 0.3;
+            border-radius: 4px;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .showcase-text { flex: 1; }
+        .showcase-text .section-label { text-align: left; }
+        .showcase-text .section-title { text-align: left; }
+        .showcase-text p {
+            color: rgba(255,255,255,0.65);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .showcase-cream .showcase-text p { color: var(--brand-secondary); }
+        .showcase-light .showcase-text p { color: var(--brand-secondary); }
+
+        /* ===== IMAGE GALLERY ROW ===== */
+        .gallery-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 768px) {
+            .gallery-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 4/3;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        /* ===== PARALLAX BANNER ===== */
+        .parallax-banner {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .parallax-banner-bg {
+            position: absolute;
+            inset: 0;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @supports (-webkit-touch-callout: none) {
+            .parallax-banner-bg { background-attachment: scroll; }
+        }
+        .parallax-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(58, 46, 42, 0.75);
+        }
+        .parallax-banner-content {
+            position: relative;
+            z-index: 10;
+            color: #fff;
+            padding: 3rem 1.5rem;
+        }
+
+        /* ===== STATS ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(169,132,103,0.2);
+        }
+        @media (min-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--brand-primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        /* ===== TESTIMONIAL ===== */
+        .testimonial-section { background: var(--brand-cream); }
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            color: var(--brand-dark);
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .testimonial-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(169,132,103,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        @media (min-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+        }
+        .contact-info h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail i {
+            color: var(--brand-primary);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        .contact-detail strong {
+            display: block;
+            color: var(--brand-light);
+            margin-bottom: 0.25rem;
+        }
+        .contact-detail p {
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--brand-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            outline: none;
+            border-radius: 2px;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--brand-primary);
+        }
+        .form-group select option { background: var(--brand-dark); color: #fff; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-submit {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: #fff;
+            padding: 0.875rem 2.5rem;
+            border: 1px solid var(--brand-primary);
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+        .form-submit:hover {
+            background: transparent;
+            color: var(--brand-primary);
+        }
+
+        /* ===== MAP ===== */
+        .map-section {
+            background: var(--brand-light);
+        }
+        .map-wrapper {
+            width: 100%;
+            height: 400px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            filter: grayscale(30%);
+            transition: filter 0.7s;
+        }
+        .map-wrapper:hover { filter: grayscale(0%); }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--brand-darker);
+            color: rgba(255,255,255,0.45);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .footer-inner { flex-direction: row; justify-content: space-between; }
+        }
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+        .footer-socials a {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .footer-socials a:hover {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+            color: #fff;
+        }
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        @media (min-width: 768px) {
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            text-decoration: none;
+            z-index: 50;
+            animation: pulse-glow 2s ease-in-out infinite;
+            transition: transform 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.12); }
+
+        /* ===== FEATURED GALLERY (Horizontal scroll on mobile) ===== */
+        .featured-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
+            scrollbar-width: none;
+        }
+        .featured-scroll::-webkit-scrollbar { display: none; }
+        .featured-scroll-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 3/4;
+        }
+        @media (min-width: 768px) {
+            .featured-scroll { display: grid; grid-template-columns: repeat(4, 1fr); overflow: visible; }
+            .featured-scroll-item { flex: initial; }
+        }
+        .featured-scroll-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .featured-scroll-item:hover img { transform: scale(1.05); }
+        .featured-scroll-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.25rem;
+        }
+        .featured-scroll-overlay span {
+            color: var(--brand-primary);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+        .featured-scroll-overlay h4 {
+            color: #fff;
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+        }
+
+        /* ===== LINK HELPER ===== */
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+        .link-arrow:hover { color: #fff; }
+        .link-arrow i { transition: transform 0.3s; }
+        .link-arrow:hover i { transform: translateX(4px); }
+        .showcase-cream .link-arrow:hover { color: var(--brand-dark); }
+        .showcase-light .link-arrow:hover { color: var(--brand-dark); }
+
+        /* ===== ICON FEATURES ===== */
+        .feature-list { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+        .feature-item { display: flex; gap: 1rem; }
+        .feature-icon {
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 1px solid var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+        }
+        .feature-item h4 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--brand-light);
+        }
+        .feature-item p {
+            color: rgba(255,255,255,0.55) !important;
+            font-size: 0.9rem;
+            margin: 0 !important;
+        }
+        .showcase-cream .feature-item h4 { color: var(--brand-dark); }
+        .showcase-cream .feature-item p { color: var(--brand-secondary) !important; }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo">Leufü<span>.</span></a>
+            <div class="nav-links">
+                <a href="#categorias">Categorías</a>
+                <a href="#cocinas">Cocinas</a>
+                <a href="#puertas">Puertas</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto" class="nav-cta">Cotizar</a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="glass-nav">
+            <a href="#categorias">Categorías</a>
+            <a href="#cocinas">Cocinas</a>
+            <a href="#puertas">Puertas</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto" style="color:var(--brand-primary);font-weight:700;border-bottom:1px solid var(--brand-primary);padding-bottom:2px;">Cotizar</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="img/WhatsApp Image 2026-05-18 at 20.49.42 (2).jpeg" alt="Cocina rústica en madera nativa con mesa artesanal" loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content container">
+            <span class="hero-badge animate-slide-up" style="animation-delay:200ms">Maestría en Madera Nativa</span>
+            <h1 class="animate-slide-up text-shadow-md" style="animation-delay:400ms">
+                El corazón de <br><em>tu hogar</em>
+            </h1>
+            <p class="animate-slide-up text-shadow-sm" style="animation-delay:600ms">
+                Cocinas, comedores, puertas, closets y más. Muebles rústicos elaborados a mano en ciprés, roble y raulí — piezas eternas desde Los Niches, Curicó.
+            </p>
+            <div class="animate-slide-up" style="animation-delay:800ms">
+                <a href="#categorias" class="hero-cta">Explorar Categorías</a>
+                <div class="hero-stars">
+                    <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                    <span>Excelencia Artesanal</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-float">
+            <a href="#categorias">
+                <span>Descubrir</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ========== CATEGORY GRID ========== -->
+    <section id="categorias" class="section-padding showcase-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Nuestras Especialidades</span>
+                <h2 class="section-title">Todo lo que <em>necesitas</em></h2>
+                <p class="section-desc">Desde la cocina hasta el quincho, cada pieza está pensada para transformar tus espacios con la calidez y resistencia de la madera nativa.</p>
+            </div>
+
+            <div class="category-grid reveal-stagger">
+                <!-- Cocinas - LARGE -->
+                <div class="category-card" id="cat-cocinas">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.49.41.jpeg" alt="Cocina rústica en madera de ciprés" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Lo más solicitado</span>
+                        <h3 class="category-card-title">Cocinas</h3>
+                    </div>
+                </div>
+                <!-- Comedores - LARGE -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.51.30.jpeg" alt="Comedor rústico de madera nativa con sillas" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Mesa + Sillas</span>
+                        <h3 class="category-card-title">Comedores</h3>
+                    </div>
+                </div>
+                <!-- Puertas -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.50.36 (2).jpeg" alt="Puerta de entrada en madera nativa con vidrio" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Interiores & Exteriores</span>
+                        <h3 class="category-card-title">Puertas</h3>
+                    </div>
+                </div>
+                <!-- Modulares -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.18.jpeg" alt="Mueble modular para TV en madera" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Living & TV</span>
+                        <h3 class="category-card-title">Modulares</h3>
+                    </div>
+                </div>
+                <!-- Closets -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.33.jpeg" alt="Tocador con espejo en madera rústica" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Organización</span>
+                        <h3 class="category-card-title">Closets & Dormitorio</h3>
+                    </div>
+                </div>
+                <!-- Mesas de centro -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.37.jpeg" alt="Mesa de centro con corte natural de tronco" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Piezas Únicas</span>
+                        <h3 class="category-card-title">Mesas de Centro</h3>
+                    </div>
+                </div>
+                <!-- Camas y otros -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.25.jpeg" alt="Respaldo de cama en madera noble" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Descanso</span>
+                        <h3 class="category-card-title">Camas & Otros</h3>
+                    </div>
+                </div>
+                <!-- Quinchos -->
+                <div class="category-card">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.28.jpeg" alt="Mesón de quincho con barra de madera" loading="lazy">
+                    <div class="category-card-overlay">
+                        <span class="category-card-label">Aire Libre</span>
+                        <h3 class="category-card-title">Quinchos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COCINAS SHOWCASE ========== -->
+    <section id="cocinas" class="section-padding showcase showcase-dark">
+        <div class="container">
+            <div class="showcase-split">
+                <div class="showcase-media reveal">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.49.42.jpeg" alt="Cocina completa en madera nativa con muebles de ciprés" loading="lazy">
+                    <div class="showcase-media-accent"></div>
+                </div>
+                <div class="showcase-text reveal">
+                    <span class="section-label">Lo más solicitado</span>
+                    <h2 class="section-title" style="color:#fff">Cocinas en <em style="color:var(--brand-primary)">Madera Nativa</em></h2>
+                    <p>Fabricamos cocinas completas a medida: muebles bajos, aéreos, despensas e islas. Cada pieza se diseña según tu espacio, con maderas nobles que le dan un carácter cálido e inconfundible a tu hogar.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                            <div>
+                                <h4>Diseño a Medida</h4>
+                                <p>Cada cocina se adapta exactamente a las dimensiones y necesidades de tu espacio.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-tree"></i></div>
+                            <div>
+                                <h4>Ciprés, Roble & Raulí</h4>
+                                <p>Maderas nobles chilenas con acabados naturales que resaltan cada veta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="link-arrow">Cotizar mi cocina <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="gallery-row reveal">
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.49.42 (1).jpeg" alt="Cocina rústica con gabinetes de madera" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.49.43.jpeg" alt="Muebles de cocina bajos en madera con horno" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.49.46.jpeg" alt="Cocina completa con muebles altos y bajos en madera noble" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PUERTAS SHOWCASE ========== -->
+    <section id="puertas" class="section-padding showcase showcase-cream">
+        <div class="container">
+            <div class="showcase-split reverse">
+                <div class="showcase-media reveal">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.50.36 (1).jpeg" alt="Puerta principal de madera nativa con diseño moderno" loading="lazy">
+                </div>
+                <div class="showcase-text reveal">
+                    <span class="section-label">Accesos con carácter</span>
+                    <h2 class="section-title">Puertas que <em>impresionan</em></h2>
+                    <p style="color:var(--brand-secondary)">Desde puertas de entrada con vidrios y diseños artísticos, hasta puertas interiores clásicas con paneles tallados. Cada puerta es fabricada a mano con maderas seleccionadas para resistencia y belleza.</p>
+                    <p style="color:var(--brand-secondary)">Ofrecemos diseños modernos con ventanillas de vidrio, puertas dobles estilo francés, y diseños exclusivos con detalles decorativos como el icónico sol tallado.</p>
+                    <a href="#contacto" class="link-arrow">Cotizar puerta <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="gallery-row reveal">
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.50.37.jpeg" alt="Puerta de entrada con diseño horizontal y ventanillas" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.50.39.jpeg" alt="Puerta exterior doble con vidrios" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.50.40.jpeg" alt="Puerta artística con diseño circular decorativo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMEDORES & MESAS PARALLAX ========== -->
+    <div class="parallax-banner">
+        <div class="parallax-banner-bg" style="background-image: url('img/WhatsApp Image 2026-05-18 at 20.51.29 (2).jpeg')"></div>
+        <div class="parallax-banner-overlay"></div>
+        <div class="parallax-banner-content reveal">
+            <span class="section-label" style="color:var(--brand-primary)">Comedores & Mesas</span>
+            <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:1rem;line-height:1.2">Donde la familia <em style="font-weight:300;font-style:italic">se reúne</em></h2>
+            <p style="max-width:600px;margin:0 auto;color:rgba(255,255,255,0.8);font-weight:300;font-size:1.1rem">Mesas de comedor para 6, 8 o más personas. Sillas tapizadas con diseños cruzados o clásicos. Todo en madera nativa con acabados que perduran generaciones.</p>
+        </div>
+    </div>
+
+    <!-- ========== GALERÍA VARIADA ========== -->
+    <section id="galeria" class="section-padding showcase-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Portafolio Selecto</span>
+                <h2 class="section-title">Más allá de <em>lo ordinario</em></h2>
+                <p class="section-desc">Modulares, closets, tocadores, mesas de centro live-edge, muebles de baño y quinchos. Cada proyecto es un reflejo de nuestro compromiso con la excelencia.</p>
+            </div>
+
+            <div class="featured-scroll reveal-stagger">
+                <!-- Modular -->
+                <div class="featured-scroll-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.19.jpeg" alt="Mueble modular para TV de madera" loading="lazy">
+                    <div class="featured-scroll-overlay">
+                        <span>Living</span>
+                        <h4>Modular TV</h4>
+                    </div>
+                </div>
+                <!-- Tocador -->
+                <div class="featured-scroll-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.33.jpeg" alt="Tocador rústico con espejo" loading="lazy">
+                    <div class="featured-scroll-overlay">
+                        <span>Dormitorio</span>
+                        <h4>Tocador con Espejo</h4>
+                    </div>
+                </div>
+                <!-- Mesa de centro -->
+                <div class="featured-scroll-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.37.jpeg" alt="Mesa de centro live-edge con base metálica" loading="lazy">
+                    <div class="featured-scroll-overlay">
+                        <span>Pieza Única</span>
+                        <h4>Mesa Live-Edge</h4>
+                    </div>
+                </div>
+                <!-- Aparador -->
+                <div class="featured-scroll-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.30.jpeg" alt="Aparador rústico estilo vintage con herrajes" loading="lazy">
+                    <div class="featured-scroll-overlay">
+                        <span>Clásico</span>
+                        <h4>Aparador Rústico</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row -->
+            <div class="gallery-row reveal" style="margin-top:1.5rem">
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.29.jpeg" alt="Buffet de madera rústica con herrajes de fierro forjado" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.27.jpeg" alt="Silla de comedor tapizada con respaldo cruzado" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.38.jpeg" alt="Silla rústica de madera nativa con listones" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUINCHOS & AIRE LIBRE ========== -->
+    <section class="section-padding showcase showcase-dark">
+        <div class="container">
+            <div class="showcase-split reverse">
+                <div class="showcase-media reveal">
+                    <img src="img/WhatsApp Image 2026-05-18 at 20.55.28.jpeg" alt="Barra de quincho en madera con parrilla" loading="lazy">
+                    <div class="showcase-media-accent"></div>
+                </div>
+                <div class="showcase-text reveal">
+                    <span class="section-label">Espacios al aire libre</span>
+                    <h2 class="section-title" style="color:#fff">Quinchos & <em style="color:var(--brand-primary)">Terrazas</em></h2>
+                    <p>Barras, mesones y cubiertas para quinchos con parrilla. Diseñamos superficies de trabajo amplias, resistentes al calor y con un acabado que realza cualquier espacio de reunión familiar.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-fire"></i></div>
+                            <div>
+                                <h4>Resistencia al Calor</h4>
+                                <p>Maderas tratadas para soportar las condiciones de un quincho.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
+                            <div>
+                                <h4>Para Reuniones</h4>
+                                <p>Espacios amplios diseñados para disfrutar con familia y amigos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="link-arrow">Cotizar quincho <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIAL & STATS ========== -->
+    <section class="section-padding testimonial-section">
+        <div class="container">
+            <div class="reveal" style="text-align:center;max-width:800px;margin:0 auto;margin-bottom:4rem">
+                <i class="fa-solid fa-quote-left" style="font-size:2.5rem;color:var(--brand-primary);opacity:0.4;margin-bottom:1.5rem;display:block"></i>
+                <p class="testimonial-quote">"La calidez que le dio la mesa de ciprés a nuestro comedor es increíble. Se nota el cariño y la calidad en cada terminación."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MF</div>
+                    <div style="text-align:left">
+                        <p style="font-weight:700;color:var(--brand-dark)">María Fernanda</p>
+                        <p style="font-size:0.85rem;color:var(--brand-secondary)">Cliente Curicó</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid reveal-stagger">
+                <div class="stat-item">
+                    <span class="stat-number"><span class="counter" data-target="15">0</span></span>
+                    <span class="stat-label">Años de Tradición</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><span class="counter" data-target="500">0</span>+</span>
+                    <span class="stat-label">Proyectos Entregados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><span class="counter" data-target="3">0</span></span>
+                    <span class="stat-label">Maderas Nativas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><span class="counter" data-target="100">0</span>%</span>
+                    <span class="stat-label">Hecho a Mano</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM + INFO ========== -->
+    <section id="contacto" class="section-padding contact-section">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom:3rem">
+                <span class="section-label" style="color:var(--brand-primary)">Hablemos de tu proyecto</span>
+                <h2 class="section-title" style="color:#fff">Solicita tu <em style="color:var(--brand-primary)">Cotización</em></h2>
+                <p class="section-desc" style="color:rgba(255,255,255,0.55)">Cuéntanos qué necesitas y te contactamos con una propuesta personalizada.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info -->
+                <div class="contact-info reveal">
+                    <h2>Visita nuestro Taller</h2>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <p>PC 1 La Obra - La Palmera<br>Los Niches, Curicó, Chile.</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Contacto Directo</strong>
+                            <p>+56 9 8147 4280</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <strong>Horario</strong>
+                            <p>Lunes a Viernes: 09:00 - 18:30<br>Sábado: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p><a href="https://wa.me/56981474280?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20un%20mueble%20r%C3%BAstico." target="_blank" rel="noopener noreferrer" style="color:var(--brand-primary);text-decoration:none">Escríbenos directo →</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="contact-form" class="reveal" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-name">Nombre</label>
+                            <input type="text" id="form-name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-phone">Teléfono</label>
+                            <input type="tel" id="form-phone" name="phone" placeholder="+56 9 XXXX XXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">Email</label>
+                        <input type="email" id="form-email" name="email" placeholder="tu@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-category">¿Qué te interesa?</label>
+                        <select id="form-category" name="category">
+                            <option value="">Seleccionar categoría...</option>
+                            <option value="cocina">Cocina</option>
+                            <option value="comedor">Comedor</option>
+                            <option value="puerta">Puerta</option>
+                            <option value="modular">Modular</option>
+                            <option value="closet">Closet / Dormitorio</option>
+                            <option value="mesa-centro">Mesa de Centro</option>
+                            <option value="cama">Cama</option>
+                            <option value="quincho">Quincho</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">Mensaje</label>
+                        <textarea id="form-message" name="message" placeholder="Describe brevemente lo que necesitas..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="form-submit-btn">
+                        <i class="fa-solid fa-paper-plane" style="margin-right:0.5rem"></i> Enviar Cotización
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GOOGLE MAPS ========== -->
+    <section class="map-section" style="padding: 0;">
+        <div class="container" style="padding-top:4rem;padding-bottom:4rem">
+            <div class="section-header reveal" style="margin-bottom:2rem">
+                <span class="section-label">Encuéntranos</span>
+                <h2 class="section-title">Nuestro <em>Taller</em></h2>
+            </div>
+            <div class="map-wrapper reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102148.91321035043!2d-71.2847!3d-35.0844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9664555555555555%3A0x0!2sLos%20Niches%2C%20Curic%C3%B3%2C%20Maule!5e0!3m2!1ses-419!2scl!4v1689000000000!5m2!1ses-419!2scl" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación Muebles Rústicos Leufü en Los Niches, Curicó">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="nav-logo" style="font-size:1.5rem">Leufü<span>.</span></a>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/p/Muebles-R%C3%BAsticos-Leuf%C3%BC-100065101926223/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Muebles Rústicos Leufü. Todos los derechos reservados.</p>
+                <div style="display:flex;gap:1rem">
+                    <span>Artesanía Chilena</span>
+                    <span>|</span>
+                    <span>Diseño Atemporal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+    <!-- CONFIGURABLE: Cambia el número y mensaje en la URL de abajo -->
+    <a href="https://wa.me/56981474280?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20un%20mueble%20r%C3%BAstico." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="whatsapp-btn"
+       aria-label="Contactar por WhatsApp"
+       id="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // === Year ===
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // === Navbar Scroll ===
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'scrolled');
+            } else {
+                navbar.classList.remove('glass-nav', 'scrolled');
+            }
+        });
+
+        // === Mobile Menu ===
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // === Intersection Observer for Reveals ===
+        const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === Counter Animation ===
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 1500;
+                    const startTime = performance.now();
+                    
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        counter.textContent = Math.round(target * eased);
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // === Form Handler ===
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const email = document.getElementById('form-email').value;
+            const category = document.getElementById('form-category').value;
+            const message = document.getElementById('form-message').value;
+
+            // Build WhatsApp message
+            let waMsg = `Hola, soy *${name}*.%0A`;
+            if (category) waMsg += `Me interesa: *${category}*%0A`;
+            if (message) waMsg += `Detalle: ${message}%0A`;
+            if (email) waMsg += `Email: ${email}%0A`;
+            waMsg += `Teléfono: ${phone}`;
+
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/56981474280?text=${waMsg}`, '_blank');
+
+            // Visual feedback
+            const btn = document.getElementById('form-submit-btn');
+            btn.innerHTML = '<i class="fa-solid fa-check" style="margin-right:0.5rem"></i> ¡Enviado!';
+            btn.style.background = '#25D366';
+            btn.style.borderColor = '#25D366';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane" style="margin-right:0.5rem"></i> Enviar Cotización';
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                e.target.reset();
+            }, 3000);
+        }
+
+        // === Smooth scroll for anchor links ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // === Lazy image optimization hint ===
+        // For production, images should be compressed using tools like:
+        // squoosh.app, tinypng.com, or imagemagick
+        // Target: < 150KB per image for web delivery
+        // Format: WebP with JPEG fallback
+    </script>
+</body>
+</html>
